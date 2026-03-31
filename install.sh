@@ -33,9 +33,7 @@ done
 
 TARGET_DIR="$PWD"
 SCRIPT_DIR=""
-if [[ -n "${BASH_SOURCE[0]-}" && -f "${BASH_SOURCE[0]}" ]]; then
-  SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-elif [[ -n "${0-}" && "${0}" != "bash" && "${0}" != "-bash" && -f "${0}" ]]; then
+if [[ -n "${0-}" && "${0}" != "bash" && "${0}" != "-bash" && -f "${0}" ]]; then
   SCRIPT_DIR="$(cd "$(dirname "${0}")" && pwd)"
 fi
 
