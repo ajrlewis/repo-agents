@@ -4,14 +4,14 @@ Use these steps for each non-trivial task.
 
 ## Feature workflow
 
-1. Sync your local default branch and start from a clean state.
+1. Start from a clean working tree and an up-to-date default branch.
 2. Create and checkout a feature branch.
 3. Keep the change small and scoped to one objective.
-4. Implement code with unit tests in the same branch.
-5. Run regression tests for touched areas.
-6. If backend/frontend runtime or build behavior changed, update Docker dev and production containers/images.
-7. Update docs/instructions if commands or behavior changed.
-8. Open PR with test evidence and any rollout notes.
+4. Implement the change and add or update tests in the same branch.
+5. Run relevant tests for touched areas before finishing.
+6. If runtime, dependency, build, or deployment behavior changed, update related Docker/dev/prod configuration as needed.
+7. Update docs or agent instructions if commands, workflows, or behavior changed.
+8. Prepare a PR summary with what changed, how it was tested, and any rollout or follow-up notes.
 
 ## Branch naming
 
@@ -23,6 +23,7 @@ Use readable names such as:
 
 ## Quality bar
 
-- New code should include or update unit tests.
-- Regressions should be caught before PR by running relevant test suites.
-- Avoid mixing unrelated refactors into feature PRs.
+- Add or update tests for new or changed behavior.
+- Run relevant regression checks before opening or finalizing a PR.
+- Avoid unrelated refactors in the same PR.
+- Prefer incremental changes over broad rewrites.
