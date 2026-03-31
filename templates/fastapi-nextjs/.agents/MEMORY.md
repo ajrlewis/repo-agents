@@ -1,14 +1,34 @@
 # Stable Memory
 
-Use this file for stable repo facts only.
+Use this file for stable repo facts that should persist across tasks.
 
-Good examples:
+## When to write to this file
 
-- canonical service names
-- deployment target names
-- long-lived directory conventions
-- required CI job names
+Add entries when you discover or establish facts such as:
 
-Do not store temporary task notes, assumptions for one PR, or debugging transcripts here.
+- canonical service names or directories
+- actual backend/frontend paths used in this repo
+- confirmed commands that differ from defaults
+- deployment targets or environments
+- required CI/CD job names
+- important conventions used consistently in the repo
 
-When adding entries, prefer concise bullets with concrete facts that are unlikely to change often.
+## Good examples
+
+- Backend lives in `apps/api`
+- Frontend lives in `apps/web`
+- CI command is `make ci`
+- Production deploy uses Vercel project `portfolio-web`
+
+## Do not store
+
+- temporary task notes
+- one-off assumptions
+- debugging logs
+- step-by-step reasoning
+
+## Style
+
+- Use concise bullet points
+- Prefer concrete, verifiable facts
+- Avoid speculation

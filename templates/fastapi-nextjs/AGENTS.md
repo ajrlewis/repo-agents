@@ -28,4 +28,5 @@ Read these files before making changes:
 
 - Follow code style guidelines in `.agents/CODE_STYLE.md`.
 
-- Only write to `.agents/MEMORY.md` for stable, long-lived repo facts.
+- When you discover stable repo facts (paths, commands, conventions), add them to `.agents/MEMORY.md`.
+- Do not add temporary notes or speculative information.
