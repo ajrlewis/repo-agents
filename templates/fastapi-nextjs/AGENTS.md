@@ -1,6 +1,6 @@
 # Agent Instructions
 
-Read files in this order before making changes:
+Read these files before making changes:
 
 1. `.agents/PROJECT.md`
 2. `.agents/STACK.md`
@@ -12,6 +12,17 @@ Read files in this order before making changes:
 ## Operating rules
 
 - Treat this file as the entrypoint and `.agents/*` as the source of truth.
-- Follow the workflow steps in `.agents/WORKFLOWS.md` for every feature or fix.
+- Follow the workflows in `.agents/WORKFLOWS.md` for all changes.
+
+- Keep changes small and scoped to the task.
+- Add or update tests for any new or changed behavior.
+- Run relevant tests before finishing.
+- Prefer incremental changes over large rewrites.
+
 - Use commands from `.agents/COMMANDS.md` instead of guessing.
-- Keep updates to `.agents/MEMORY.md` limited to stable repo facts.
+- Avoid unrelated refactors or broad changes.
+
+- If backend, frontend, or API behavior changes, verify impacted areas.
+- If runtime or dependencies change, check Docker and deployment implications.
+
+- Only write to `.agents/MEMORY.md` for stable, long-lived repo facts.
