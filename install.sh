@@ -31,10 +31,20 @@ for arg in "$@"; do
   esac
 done
 
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 TARGET_DIR="$PWD"
-LOCAL_TEMPLATE_DIR="$SCRIPT_DIR/templates/$TEMPLATE"
-REMOTE_BASE_URL="${REPO_AGENTS_REMOTE_BASE_URL:-https://raw.githubusercontent.com/<your-org>/repo-agents/main/templates}"
+SCRIPT_DIR=""
+if [[ -n "${BASH_SOURCE[0]-}" && -f "${BASH_SOURCE[0]}" ]]; then
+  SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+elif [[ -n "${0-}" && "${0}" != "bash" && "${0}" != "-bash" && -f "${0}" ]]; then
+  SCRIPT_DIR="$(cd "$(dirname "${0}")" && pwd)"
+fi
+
+LOCAL_TEMPLATE_DIR=""
+if [[ -n "$SCRIPT_DIR" ]]; then
+  LOCAL_TEMPLATE_DIR="$SCRIPT_DIR/templates/$TEMPLATE"
+fi
+
+REMOTE_BASE_URL="${REPO_AGENTS_REMOTE_BASE_URL:-https://raw.githubusercontent.com/ajrlewis/repo-agents/main/templates}"
 
 FILES=(
   "AGENTS.md"
@@ -49,16 +59,9 @@ FILES=(
 )
 
 SOURCE_MODE=""
-if [[ -d "$LOCAL_TEMPLATE_DIR" ]]; then
+if [[ -n "$LOCAL_TEMPLATE_DIR" && -d "$LOCAL_TEMPLATE_DIR" ]]; then
   SOURCE_MODE="local"
 else
-  if [[ "$REMOTE_BASE_URL" == *"<your-org>"* ]]; then
-    echo "ERROR: template '$TEMPLATE' not found at $LOCAL_TEMPLATE_DIR"
-    echo "Set REPO_AGENTS_REMOTE_BASE_URL to your GitHub raw templates path,"
-    echo "or run this installer from a local clone of repo-agents."
-    exit 1
-  fi
-
   if ! command -v curl >/dev/null 2>&1; then
     echo "ERROR: template '$TEMPLATE' not found locally and 'curl' is unavailable for remote install."
     exit 1
@@ -98,6 +101,8 @@ for rel in "${FILES[@]}"; do
     url="$REMOTE_BASE_URL/$TEMPLATE/$rel"
     if ! curl -fsSL "$url" -o "$dest"; then
       echo "ERROR: failed to download $url"
+      echo "Check that template '$TEMPLATE' exists in: $REMOTE_BASE_URL"
+      echo "You can override this with REPO_AGENTS_REMOTE_BASE_URL=<raw-templates-url>"
       exit 1
     fi
   fi

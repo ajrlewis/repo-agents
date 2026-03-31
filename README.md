@@ -46,6 +46,12 @@ Install into a different repo by running the script from that repo and referenci
 curl -fsSL https://raw.githubusercontent.com/ajrlewis/repo-agents/main/install.sh | bash -s -- fastapi-nextjs
 ```
 
+Optional: install from a fork or custom branch by overriding template base URL:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/ajrlewis/repo-agents/main/install.sh | REPO_AGENTS_REMOTE_BASE_URL="https://raw.githubusercontent.com/<org>/<repo>/<branch>/templates" bash -s -- fastapi-nextjs
+```
+
 ## Scope
 
 The initial template is intentionally minimal: no auto-detection, no merge engine, no extra abstractions.
