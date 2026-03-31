@@ -1,0 +1,21 @@
+# Stack Summary
+
+## Backend
+
+- Language: Python
+- Runtime/package tooling: `uv`
+- API framework: FastAPI
+- Testing: `pytest`
+- Agent framework options: LangGraph / LangChain
+- Database: PostgreSQL with `pgvector`
+
+## Frontend
+
+- Framework: Next.js (App Router)
+- Tooling/runtime: `bun`
+
+## Infrastructure
+
+- Containers: Docker for development and production
+- Deploy frontends: two Vercel projects
+- CI/CD: GitHub Actions building Docker images
