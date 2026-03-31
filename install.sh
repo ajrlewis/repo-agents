@@ -49,6 +49,7 @@ FILES=(
   ".agents/PROJECT.md"
   ".agents/WORKFLOWS.md"
   ".agents/STACK.md"
+  ".agents/CODE_STYLE.md"
   ".agents/COMMANDS.md"
   ".agents/CHECKLISTS.md"
   ".agents/MEMORY.md"
