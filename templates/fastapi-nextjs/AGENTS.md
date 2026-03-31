@@ -8,6 +8,7 @@ Read these files before making changes:
 4. `.agents/COMMANDS.md`
 5. `.agents/CHECKLISTS.md`
 6. `.agents/MEMORY.md`
+7. `.agents/CODE_STYLE.md`
 
 ## Operating rules
 
@@ -24,5 +25,7 @@ Read these files before making changes:
 
 - If backend, frontend, or API behavior changes, verify impacted areas.
 - If runtime or dependencies change, check Docker and deployment implications.
+
+- Follow code style guidelines in `.agents/CODE_STYLE.md`.
 
 - Only write to `.agents/MEMORY.md` for stable, long-lived repo facts.
