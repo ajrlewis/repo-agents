@@ -13,6 +13,12 @@ Use these steps for each non-trivial task.
 7. Update docs or agent instructions if commands, workflows, or behavior changed.
 8. Prepare a PR summary with what changed, how it was tested, and any rollout or follow-up notes.
 
+## Backend / data changes
+
+- If models, schema, or persisted data structures change, update and verify Alembic migrations.
+- If migrations change, ensure upgrade/downgrade paths are valid where applicable.
+- If vector storage, embeddings, or retrieval behavior changes, verify pgvector-related queries and indexes.
+
 ## Branch naming
 
 Use readable names such as:

@@ -15,6 +15,15 @@ Use these commands instead of guessing. If a command is missing or incorrect, up
 - Run unit tests: `cd backend && uv run pytest -q`
 - Run full test suite: `cd backend && uv run pytest`
 
+## Database
+
+> Replace paths or commands as needed for your repo setup.
+
+- Create migration: `cd backend && uv run alembic revision --autogenerate -m "<message>"`
+- Apply migrations: `cd backend && uv run alembic upgrade head`
+- Roll back one migration: `cd backend && uv run alembic downgrade -1`
+- Show current revision: `cd backend && uv run alembic current`
+
 ## Frontend (`frontend/`)
 
 > Replace `frontend/` with the actual frontend path for this repo if different.

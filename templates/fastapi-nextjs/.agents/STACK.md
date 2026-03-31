@@ -5,9 +5,11 @@
 - Language: Python
 - Runtime/package tooling: `uv`
 - API framework: FastAPI
+- ORM / query layer: SQLAlchemy (async usage)
 - Testing: `pytest`
 - Agent framework options: LangGraph / LangChain
-- Database: PostgreSQL with `pgvector`
+- Database: PostgreSQL with `pgvector` (vector similarity search)
+- Migrations: Alembic
 
 ## Frontend
 
