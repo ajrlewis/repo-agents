@@ -5,7 +5,7 @@
 - [ ] Branch created and scoped to one feature or fix
 - [ ] Change set is small and focused (no unrelated refactors)
 - [ ] New or changed behavior has tests added or updated
-- [ ] Relevant tests for impacted backend/frontend areas have been run
+- [ ] Relevant tests for impacted API/web areas (`apps/api`, `apps/web`) have been run
 - [ ] Edge cases and failure paths considered for new logic
 
 - [ ] If API or shared interfaces changed, dependent code paths are verified

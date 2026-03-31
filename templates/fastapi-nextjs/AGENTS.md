@@ -10,6 +10,18 @@ Read these files before making changes:
 6. `.agents/MEMORY.md`
 7. `.agents/CODE_STYLE.md`
 
+## Default Monorepo Layout
+
+Use this template default unless the repo documents a different structure:
+
+```text
+apps/
+  api/        # FastAPI backend
+  web/        # Next.js frontend
+packages/     # optional shared libraries/config/types
+infra/        # optional infrastructure/deployment files
+```
+
 ## Operating rules
 
 - Treat this file as the entrypoint and `.agents/*` as the source of truth.
@@ -23,7 +35,7 @@ Read these files before making changes:
 - Use commands from `.agents/COMMANDS.md` instead of guessing.
 - Avoid unrelated refactors or broad changes.
 
-- If backend, frontend, or API behavior changes, verify impacted areas.
+- If API (`apps/api`) or web (`apps/web`) behavior changes, verify impacted areas.
 - If runtime or dependencies change, check Docker and deployment implications.
 
 - Follow code style guidelines in `.agents/CODE_STYLE.md`.

@@ -6,32 +6,34 @@ Use these commands instead of guessing. If a command is missing or incorrect, up
 
 - Create feature branch: `git checkout -b feat/<short-description>`
 
-## Backend (`backend/`)
+## API (`apps/api`)
 
-> Replace `backend/` with the actual backend path for this repo if different.
+> Default API path is `apps/api`. If this repo differs, update these commands and record the correct path in `.agents/MEMORY.md`.
+>
+> FastAPI run command assumes ASGI entrypoint `app.main:app`. Replace with the real module path if different.
 
-- Install deps: `cd backend && uv sync --frozen`
-- Run API locally: `cd backend && uv run uvicorn app.main:app --reload`
-- Run unit tests: `cd backend && uv run pytest -q`
-- Run full test suite: `cd backend && uv run pytest`
+- Install deps: `cd apps/api && uv sync --frozen`
+- Run API locally: `cd apps/api && uv run uvicorn app.main:app --reload`
+- Run unit tests: `cd apps/api && uv run pytest -q`
+- Run full test suite: `cd apps/api && uv run pytest`
 
 ## Database
 
-> Replace paths or commands as needed for your repo setup.
+> Defaults below assume migrations run from `apps/api`.
 
-- Create migration: `cd backend && uv run alembic revision --autogenerate -m "<message>"`
-- Apply migrations: `cd backend && uv run alembic upgrade head`
-- Roll back one migration: `cd backend && uv run alembic downgrade -1`
-- Show current revision: `cd backend && uv run alembic current`
+- Create migration: `cd apps/api && uv run alembic revision --autogenerate -m "<message>"`
+- Apply migrations: `cd apps/api && uv run alembic upgrade head`
+- Roll back one migration: `cd apps/api && uv run alembic downgrade -1`
+- Show current revision: `cd apps/api && uv run alembic current`
 
-## Frontend (`frontend/`)
+## Web (`apps/web`)
 
-> Replace `frontend/` with the actual frontend path for this repo if different.
+> Default API path is `apps/web`. If this repo differs, update these commands and record the correct path in `.agents/MEMORY.md`.
 
-- Install deps: `cd frontend && bun install --frozen-lockfile`
-- Run app locally: `cd frontend && bun run dev`
-- Run tests: `cd frontend && bun run test`
-- Build: `cd frontend && bun run build`
+- Install deps: `cd apps/web && bun install --frozen-lockfile`
+- Run app locally: `cd apps/web && bun run dev`
+- Run tests: `cd apps/web && bun run test`
+- Build: `cd apps/web && bun run build`
 
 ## Docker
 

@@ -38,6 +38,16 @@ Or rely on the default template:
 ./install.sh
 ```
 
+## Validate template path defaults
+
+Run this check to ensure the FastAPI + Next.js template keeps `apps/api` and `apps/web` as canonical defaults:
+
+```bash
+bash scripts/check-template-path-defaults.sh
+```
+
+This command is CI-friendly and exits non-zero if legacy `backend/` or `frontend/` path defaults are reintroduced.
+
 Install into a different repo by running the script from that repo and referencing this installer path.
 
 ## Run via curl

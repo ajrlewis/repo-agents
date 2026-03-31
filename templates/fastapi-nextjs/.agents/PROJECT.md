@@ -2,9 +2,12 @@
 
 This template assumes a monorepo with at least:
 
-- `backend/`: FastAPI app and Python services
-- `frontend/`: Next.js App Router app
-- `infra/` or root Docker files: local/dev/prod container definitions
+- `apps/api`: FastAPI backend and Python services
+- `apps/web`: Next.js App Router frontend
+- `packages/` (optional): shared libraries, config, or types
+- `infra/` (optional): infrastructure/deployment files
+
+Repos may customize paths. If they do, update `.agents/COMMANDS.md` and `.agents/MEMORY.md` to match the real layout.
 
 ## Backend expectations
 
@@ -17,7 +20,7 @@ This template assumes a monorepo with at least:
 ## Frontend expectations
 
 - Next.js App Router
-- `bun` for frontend dependency and script execution
+- `bun` for web dependency and script execution
 
 ## Infra expectations
 

@@ -2,6 +2,12 @@
 
 Use these steps for each non-trivial task.
 
+## Monorepo defaults
+
+- API path default: `apps/api`
+- Web path default: `apps/web`
+- If a repo uses different paths, update `.agents/COMMANDS.md` and `.agents/MEMORY.md` in the same change.
+
 ## Feature workflow
 
 1. Start from a clean working tree and an up-to-date default branch.
