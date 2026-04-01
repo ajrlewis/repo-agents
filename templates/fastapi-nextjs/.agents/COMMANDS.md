@@ -37,11 +37,10 @@ Use these commands instead of guessing. If a command is missing or incorrect, up
 
 ## Docker
 
-> Replace all placeholders with real commands before relying on them.
-
-- Dev stack build: `<replace-with-your-dev-build-command>`
-- Dev stack run: `<replace-with-your-dev-up-command>`
-- Production image build: `<replace-with-your-prod-build-command>`
+- Start full stack: `docker compose up --build`
+- Start in background: `docker compose up -d`
+- Stop stack: `docker compose down`
+- View logs: `docker compose logs`
 
 ## CI / validation
 

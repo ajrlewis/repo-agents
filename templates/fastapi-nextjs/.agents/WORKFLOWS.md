@@ -19,6 +19,15 @@ Use these steps for each non-trivial task.
 7. Update docs or agent instructions if commands, workflows, or behavior changed.
 8. Prepare a PR summary with what changed, how it was tested, and any rollout or follow-up notes.
 
+## Docker / containerization
+
+- Prefer adding Docker only when local orchestration or deployment is needed.
+- If needed, create Dockerfiles for each app and a root `compose.yaml` in the project repo.
+- Keep Docker setup minimal and readable; avoid Kubernetes or overengineering by default.
+- API container should run FastAPI with `uvicorn`.
+- Web container should build and run Next.js.
+- Database should use `postgres` with volume persistence.
+
 ## Backend / data changes
 
 - If models, schema, or persisted data structures change, update and verify Alembic migrations.

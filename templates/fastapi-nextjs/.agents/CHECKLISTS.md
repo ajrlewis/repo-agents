@@ -10,6 +10,9 @@
 
 - [ ] If API or shared interfaces changed, dependent code paths are verified
 - [ ] If runtime, dependencies, or build behavior changed, Docker dev/prod config is updated as needed
+- [ ] If Docker was introduced, `compose.yaml` runs successfully
+- [ ] API and web containers start and are reachable
+- [ ] Environment variables are wired correctly
 
 - [ ] If database schema changed, Alembic migration created or updated
 - [ ] If migration changed, upgrade/downgrade path reviewed or tested

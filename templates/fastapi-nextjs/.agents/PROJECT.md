@@ -28,6 +28,11 @@ Repos may customize paths. If they do, update `.agents/COMMANDS.md` and `.agents
 - Two Vercel projects (typically one for production, one for preview/staging)
 - GitHub Actions that build Docker images
 
+## Docker
+
+- Project may use Docker Compose for local orchestration
+- Services typically include API, web, and database
+
 ## Fill in repo-specific details here
 
 Document concrete paths, environment files, deployment names, and ownership for your real repo. Keep this section current as structure evolves.
