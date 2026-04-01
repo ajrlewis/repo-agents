@@ -9,6 +9,7 @@ Read these files before making changes:
 5. `.agents/CHECKLISTS.md`
 6. `.agents/MEMORY.md`
 7. `.agents/CODE_STYLE.md`
+8. `.agents/EVALS.md`
 
 ## Default Monorepo Layout
 

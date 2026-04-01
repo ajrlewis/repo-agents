@@ -28,7 +28,7 @@ Use these commands instead of guessing. If a command is missing or incorrect, up
 
 ## Web (`apps/web`)
 
-> Default API path is `apps/web`. If this repo differs, update these commands and record the correct path in `.agents/MEMORY.md`.
+> Default web path is `apps/web`. If this repo differs, update these commands and record the correct path in `.agents/MEMORY.md`.
 
 - Install deps: `cd apps/web && bun install --frozen-lockfile`
 - Run app locally: `cd apps/web && bun run dev`

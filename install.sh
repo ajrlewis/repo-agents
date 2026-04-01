@@ -53,6 +53,7 @@ FILES=(
   ".agents/COMMANDS.md"
   ".agents/CHECKLISTS.md"
   ".agents/MEMORY.md"
+  ".agents/EVALS.md"
   ".cursor/rules/project.mdc"
   ".github/copilot-instructions.md"
 )
